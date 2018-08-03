@@ -15,7 +15,6 @@ public class LongestWordTest {
 		final String in = "fun&!! time";
 		final String expected = "time";
 		final String actual = LongestWord.longestWord(in);
-		System.out.println(actual);
 		assertEquals(expected, actual);
 	}
 	
@@ -28,8 +27,7 @@ public class LongestWordTest {
 	public void test2() {		
 		final String in = "I love dogs";
 		final String expected = "love";
-		final String actual = LongestWord.longestWord(in);
-		System.out.println(actual);
+		final String actual = LongestWord.longestWord(in);		
 		assertEquals(expected, actual);
 	}
 
