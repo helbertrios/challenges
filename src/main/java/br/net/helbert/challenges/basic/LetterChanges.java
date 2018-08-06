@@ -8,31 +8,28 @@ public class LetterChanges {
 			return null;
 		}
 
-		if (in.isEmpty()) {
-			return in;
-		}
+		char[] arr = in.toCharArray();
 
-		StringBuilder sb = new StringBuilder(in.length());
-		for (int i = 0; i < in.length(); i++) {
-			Character ch = Character.toLowerCase(in.charAt(i));
-			if (Character.isLetter(ch)) {
-				
-				if (ch.equals('z')) {
-					ch = 'a';
+		for (int i = 0; i < arr.length; i++) {
+
+			final int c = arr[i];
+
+			if ((c > 64 && c < 91) || (c > 96 && c < 123)) {
+				int nc = c;
+				if ((c == 90) || (c == 122)) {
+					nc = 65;
 				} else {
-					ch = (char) (((int) ch)+1);
+					nc = c + 1;
+					if ((nc == 101) || (nc == 105) || (nc == 111) || (nc == 117)) {
+						nc = nc - 32;
+					}
 				}
-				
-				if (ch.equals('a') || ch.equals('e') || ch.equals('i') || ch.equals('o') || ch.equals('u')) {
-					ch = Character.toUpperCase(ch);
-				}
+				arr[i] = (char) nc;
 			}
-			sb.append(ch);
 		}
-
-		return sb.toString();
+		
+		return new String(arr);
 
 	}
-
 
 }

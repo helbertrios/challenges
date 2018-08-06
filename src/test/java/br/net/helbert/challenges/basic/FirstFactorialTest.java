@@ -31,6 +31,15 @@ public class FirstFactorialTest {
 		final int expected = 0;
 		final int actual = FirstFactorial.firstFactorial(in);
 		assertEquals(expected, actual);
+	}	
+	
+	@Test
+	public void testOne() {
+		
+		final int in = 1;
+		final int expected = 1;
+		final int actual = FirstFactorial.firstFactorial(in);
+		assertEquals(expected, actual);
 	}
 	
 	@Test

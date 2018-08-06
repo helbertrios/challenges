@@ -4,7 +4,7 @@ public class FirstReverse {
 	
 	public static String firstReverse(String in) { 
 		
-		if (in ==null) {
+		if (in == null) {
 			return null;
 		}
 		
